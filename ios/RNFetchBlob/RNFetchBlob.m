@@ -642,6 +642,11 @@ RCT_EXPORT_METHOD(df:(RCTResponseSenderBlock)callback)
     return window.rootViewController;
 }
 
+- (void)documentInteractionControllerDidEndPreview: (UIDocumentInteractionController *) controller
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
 # pragma mark - check expired network events
 
 RCT_EXPORT_METHOD(emitExpiredEvent:(RCTResponseSenderBlock)callback)
